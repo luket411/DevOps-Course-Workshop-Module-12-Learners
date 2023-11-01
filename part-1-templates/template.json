@@ -746,5 +746,19 @@
         "privateEndpointSubnetResourceId": "[if(parameters('enablePrivateEndpoint'), resourceId(parameters('privateEndpointVnetSubscriptionId'), parameters('privateEndpointVnetResourceGroup'), 'Microsoft.Network/virtualNetworks/subnets', parameters('privateEndpointVnetName'), parameters('privateEndpointSubnetName')), '')]",
         "uniqueRoleGuid": "[guid(resourceId('Microsoft.Storage/storageAccounts', variables('storageName')), variables('storageBlobContributor'), resourceId('Microsoft.Sql/servers', parameters('serverName')))]",
         "StorageBlobContributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'ba92f5b4-2d11-453d-a403-e96b0029c9fe')]"
+    },
+    "outputs": {
+        "serverDomainName": {
+            "type": "string",
+            "value": "[reference(parameters('serverName')).fullyQualifiedDomainName]"
+        },
+        "adminLogin": {
+            "type": "string",
+            "value": "[parameters('administratorLogin')]"
+        },
+        "adminPassword": {
+            "type": "string",
+            "value": "[parameters('administratorLoginPassword')]"
+        }
     }
 }
