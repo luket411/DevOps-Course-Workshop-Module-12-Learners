@@ -218,6 +218,15 @@
             "value": {
                 "type": "None"
             }
+        },
+        "importDatabase": {
+            "value": true
+        },
+        "storageAccountKey": {
+            "value": ""
+        },
+        "bacpacUrl": {
+            "value": "https://corndeletasluketmodule12.blob.core.windows.net/bacpac/database.bacpac"
         }
     }
 }
